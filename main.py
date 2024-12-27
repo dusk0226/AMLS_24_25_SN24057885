@@ -2,7 +2,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 import sys
 sys.path.append('./A')
+sys.path.append('./B')
 import A.task1
+import B.task2
 
 class Args: None
 
@@ -48,8 +50,22 @@ def taskA():
     plt.legend()
     plt.title("Task A")
     plt.savefig('TaskA.png', dpi=300, bbox_inches='tight')
-    plt.show()
+    plt.close()
+
+def taskB():
+    data = np.load('./Datasets/bloodmnist.npz')
+
+    # assign data to train, validation, and test sets. Normalize the pixel value. 
+    train_data = data['train_images']/255 
+    train_label = data['train_labels']
+    val_data = data['val_images']/255
+    val_label = data['val_labels']
+    test_data = data['test_images']/255
+    test_label = data['test_labels']
+    
+    B.task2.CNNpredict(train_data,train_label,val_data,val_label,test_data,test_label)
 
 if __name__ == "__main__":
     args: None
     taskA()
+    taskB()
