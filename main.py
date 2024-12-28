@@ -19,7 +19,7 @@ def taskA():
     test_data = data['test_images']/255
     test_label = data['test_labels']
 
-    n_components = np.arange(0.05, 1, 0.05)
+    n_components = np.arange(0.25, 1, 0.05)
     logistic_accuracy = []
     randomforest_accuracy1 = []
     randomforest_accuracy2 = []

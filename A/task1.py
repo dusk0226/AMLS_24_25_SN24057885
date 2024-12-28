@@ -48,9 +48,12 @@ def logistic_regression(train_data,train_label,test_data):
     Returns:
         pred_label(numpy array): Predicted labels for test data
     """
-    logreg = sklearn.linear_model.LogisticRegression(solver='lbfgs')
-    logreg.fit(train_data,train_label)
-    pred_label = logreg.predict(test_data)
+    param_grid = {'C': [0.01, 0.1, 1, 10, 100]}
+    logreg = sklearn.linear_model.LogisticRegression(solver='lbfgs',penalty='l2',max_iter=100)
+    grid = sklearn.model_selection.GridSearchCV(logreg, param_grid, cv=5)
+    grid.fit(train_data,train_label.ravel())
+    # Make predictions
+    pred_label = grid.predict(test_data)
     return pred_label
 
 def randomforestclassify(train_data,train_label,test_data):
@@ -66,8 +69,8 @@ def randomforestclassify(train_data,train_label,test_data):
     Returns:
         pred_label(numpy array): Predicted labels for test data
     """
-    randf = RandomForestClassifier(n_estimators=100)
-    randf.fit(train_data,train_label)
+    randf = RandomForestClassifier(n_estimators=100,max_depth=None,min_samples_split=2,random_state=42)
+    randf.fit(train_data,train_label.ravel())
     pred_label = randf.predict(test_data)
     return pred_label
 
