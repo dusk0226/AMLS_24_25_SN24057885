@@ -6,5 +6,7 @@ In main.py, for Task A, the logistic regression and random forest models are imp
 ![TaskB](https://github.com/user-attachments/assets/82ef3c64-85f7-4f9f-91b1-5b71f3fd34a2)
 
 [1] Jiancheng Yang, Rui Shi, Bingbing Ni. "MedMNIST Classification Decathlon: A Lightweight AutoML Benchmark for Medical Image Analysis". IEEE 18th International Symposium on Biomedical Imaging (ISBI), 2021.
+
 [2] Walid Al-Dhabyani, Mohammed Gomaa, et al., "Dataset of breast ultrasound images," Data in Brief, vol. 28, pp. 104863, 2020.
+
 [3] Andrea Acevedo, Anna Merino, et al., "A dataset of microscopic peripheral blood cell images for development of automatic recognition systems," Data in Brief, vol. 30, pp. 105474, 2020.
